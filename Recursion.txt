@@ -1,0 +1,105 @@
+ 
+Ans 1.
+
+public class SumOfDigits {
+    public static int sumOfDigits(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return n % 10 + sumOfDigits(n / 10);
+    }
+
+    public static void main(String[] args) {
+        int n = 1234;
+        System.out.println("Sum of digits: " + sumOfDigits(n));
+    }
+}
+
+
+Ans 2.
+
+public class AlternatingSum {
+    public static int alternatingSum(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n % 2 == 0) {
+            return -n + alternatingSum(n - 1);
+        } else {
+            return n + alternatingSum(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int n1 = 10;
+        int n2 = 5;
+        System.out.println("Alternating sum for n = " + n1 + ": " + alternatingSum(n1));
+        System.out.println("Alternating sum for n = " + n2 + ": " + alternatingSum(n2));
+    }
+}
+
+
+Ans 3.
+
+public class MaxValue {
+    public static int findMax(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {13, 1, -3, 22, 5};
+        System.out.println("Max value: " + findMax(arr));
+    }
+}
+	
+
+
+ANs 4.
+
+
+public class ArraySum {
+    public static int findSum(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {92, 23, 15, -20, 10};
+        System.out.println("Sum of values: " + findSum(arr));
+    }
+}
+
+
+Ans 5 .
+
+public class ArmstrongNumber {
+    public static boolean isArmstrong(int n) {
+        int originalNumber = n;
+        int numDigits = String.valueOf(n).length();
+        int sum = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+            sum += Math.pow(digit, numDigits);
+            n /= 10;
+        }
+
+        return sum == originalNumber;
+    }
+
+    public static void main(String[] args) {
+        int n1 = 153;
+        int n2 = 134;
+        System.out.println(n1 + " is an Armstrong number: " + isArmstrong(n1));
+        System.out.println(n2 + " is an Armstrong number: " + isArmstrong(n2));
+    }
+}
